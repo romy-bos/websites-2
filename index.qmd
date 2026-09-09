@@ -1,0 +1,57 @@
+---
+title: "Billboard Graphic"
+execute:
+  echo: false
+
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+chart_data <- billboard |>
+  pivot_longer(
+    cols = starts_with("wk"),
+    names_to = "week",
+    values_to = "rank"
+  ) |>
+  mutate(week = readr::parse_number(week))
+
+top_tracks <- chart_data |>
+  group_by(track, artist) |>
+  summarise(
+    best_rank = min(rank, na.rm = TRUE),
+    weeks_on_chart = sum(!is.na(rank)),
+    .groups = "drop"
+  ) |>
+  filter(weeks_on_chart >= 20) |>
+  slice_min(best_rank, n = 8, with_ties = FALSE)
+
+chart_data |>
+  inner_join(top_tracks, by = c("track", "artist")) |>
+  ggplot(aes(x = week, y = rank, group = track, color = best_rank)) +
+  geom_line(linewidth = 1.2, alpha = 0.85) +
+  geom_point(size = 1.8, alpha = 0.9) +
+  facet_wrap(~ fct_reorder(track, best_rank), ncol = 2) +
+  scale_y_reverse(breaks = c(1, 25, 50, 75, 100)) +
+  scale_color_viridis_c(option = "magma", direction = -1) +
+  labs(
+    title = "The climb to number one",
+    subtitle = "Weekly Billboard rank for eight enduring hits in 2000",
+    x = "Week on the chart",
+    y = "Billboard rank",
+    color = "Best rank"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", size = 20),
+    plot.subtitle = element_text(color = "grey40"),
+    strip.text = element_text(face = "bold"),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom"
+  )
+```
+
+
