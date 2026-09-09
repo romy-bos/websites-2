@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Billboard Graphic",
+    "section": "",
+    "text": "Warning: Removed 340 rows containing missing values or values outside the scale range\n(`geom_line()`).\n\n\nWarning: Removed 349 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -12,12 +19,5 @@
     "title": "About",
     "section": "",
     "text": "My name is Romy Bos and I attend New College of Florida.\nKane’s Free Data Science Bootcamp"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Billboard Graphic",
-    "section": "",
-    "text": "Warning: Removed 340 rows containing missing values or values outside the scale range\n(`geom_line()`).\n\n\nWarning: Removed 349 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   }
 ]

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://romy-bos.github.io/websites-2/about.html</loc>
-    <lastmod>2026-09-09T17:41:06.574Z</lastmod>
+    <loc>https://romy-bos.github.io/websites-2/source-2.html</loc>
+    <lastmod>2026-09-09T17:55:59.481Z</lastmod>
   </url>
   <url>
     <loc>https://romy-bos.github.io/websites-2/index.html</loc>
     <lastmod>2026-09-09T17:33:10.348Z</lastmod>
+  </url>
+  <url>
+    <loc>https://romy-bos.github.io/websites-2/source-1.html</loc>
+    <lastmod>2026-09-09T17:55:59.481Z</lastmod>
+  </url>
+  <url>
+    <loc>https://romy-bos.github.io/websites-2/about.html</loc>
+    <lastmod>2026-09-09T17:41:06.574Z</lastmod>
   </url>
 </urlset>
